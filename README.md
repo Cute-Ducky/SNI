@@ -8,6 +8,7 @@
 ***Follow the guid completely and carefully for optimal results.***
 
 **Partitioning and ZFS**
+------------------------
 To format your drive as ZFS first run `lsblk` and remember the name of the drive that you want to format as ZFS!
 
 In my case It's: /dev/sda 
@@ -89,7 +90,8 @@ sudo mount /dev/<your drive name> /mnt/boot
 sudo mount -t zfs NIXROOT/home /mnt/home
 ```
   
-And finnaly generating the configuration
+Generating the configuration
+----------------------------
 ```
 sudo nixos-generate-config --root /mnt
 ```
