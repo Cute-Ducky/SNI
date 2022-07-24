@@ -1,7 +1,8 @@
 # SNI
 ![SNI](https://user-images.githubusercontent.com/105547581/180649454-81f27742-a4cb-4320-8757-d7969c27de3a.png)
 
-**Simple NixOS Installation!** 
+**Simple NixOS Installation! *(With ZFS!)***
+--------------------------------------------
                                        
 
 
@@ -72,6 +73,9 @@ sudo zpool create -f \
 -O mountpoint=none \
 NIXROOT \
 /dev/<your drive name>
+
+enter your prefered password and DON'T forget it!
+(Note: You can't see the password that you enter to the terminal don't worry!)
 ```
   
 Create ZFS partitions with these commands
