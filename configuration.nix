@@ -11,7 +11,7 @@
     ];
 
   #ZFS
-  networking.hostId = "<your host id";
+  networking.hostId = "<your host id>";
 
   boot.loader.grub.enable = true;
   boot.loader.grub.devices = [ "nodev" ];
@@ -23,7 +23,7 @@
 
   services.zfs.autoScrub.enable = true;
 
-   networking.hostName = "snow"; # Define your hostname.
+   networking.hostName = "<your preferred host name>"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -88,7 +88,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.defaultUserShell = pkgs.<your prefered shell>;
+  # users.defaultUserShell = pkgs.<your preferred shell>;
    users.users.<your user name> = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
