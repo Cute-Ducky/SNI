@@ -99,3 +99,30 @@ Generating the configuration
 ```
 sudo nixos-generate-config --root /mnt
 ```
+Thanks to [@mcdonc](https://github.com/mcdonc) for the ZFS part!
+
+
+Editing the config file
+-----------------------
+
+open the /mnt/etc/nixos/configuration.nix file with your preferred editor.
+```
+sudo nano /mnt/etc/nixos/configuration.nix
+or
+sudo vim /mnt/etc/nixos/configuration.nix
+```
+Remove everything from your config and copy and paste my hole config [linked here](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix)
+
+Run ` head -c 8 /etc/machine-id ` and replace <your host id> in [line 14](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L14) with the number from the command's output.
+
+Replace <your preferred host name> in [line 26](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L26) with the name that you want to set for your computer. (You can choose anything!)
+  
+In [line 35](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L35) replace Continent/Country or City with your time zone.
+  
+At [line 53](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L53) you can choose which Desktop Environment or Window Manager you want. By default I have set i3 and icewm but you can remove them or add other Desktop Environments or Window Managers!
+To add a Desktop Environment or Window Manager go to search.nixos.org/options and search your preferred Desktop Environment or Window Manager then copy and paste the one with .enable at the end. After pasting add ` = true;` at the end.
+An example for the KDE Desktop Environment:
+```
+services.xserver.desktopManager.plasma5.enable = true;
+```
+  
