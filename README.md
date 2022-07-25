@@ -110,18 +110,54 @@ sudo nano /mnt/etc/nixos/configuration.nix
 or
 sudo vim /mnt/etc/nixos/configuration.nix
 ```
-Remove everything from your config and copy and paste my hole config [linked here](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix)
 
-Run ` head -c 8 /etc/machine-id ` and replace <your host id> in [line 14](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L14) with the number from the command's output.
 
-Replace <your preferred host name> in [line 26](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L26) with the name that you want to set for your computer. (You can choose anything!)
+- Remove everything from your config and copy and paste my hole config [linked here](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix)
+
+
+- Run ` head -c 8 /etc/machine-id ` and replace `<your host id>` in [line 14](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L14) with the number from the command's output.
+
+
+- Replace `<your preferred host name>` in [line 26](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L26) with the name that you want to set for your computer. (You can choose anything!)
   
-In [line 35](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L35) replace Continent/Country or City with your time zone.
   
-At [line 53](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L53) you can choose which Desktop Environment or Window Manager you want. By default I have set i3 and icewm but you can remove them or add other Desktop Environments or Window Managers!
+- In [line 35](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L35) replace `<Continent/Country or City>` with your time zone.
+  
+  
+- At [line 53](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L53) you can choose which Desktop Environment or Window Manager you want. By default I have set i3 and icewm but you can remove them or add other Desktop Environments or Window Managers!
 To add a Desktop Environment or Window Manager go to search.nixos.org/options and search your preferred Desktop Environment or Window Manager then copy and paste the one with .enable at the end. After pasting add ` = true;` at the end.
 An example for the KDE Desktop Environment:
 ```
 services.xserver.desktopManager.plasma5.enable = true;
 ```
   
+
+- To enable other shells go to [line 59](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L59) and uncomment the shell you would like, Then to set the default shell uncomment [line 91](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L91) and replace <your preferred shell> with the name of the shell that you uncommented at line 59.
+Here is an example:
+```
+users.defaultUserShell = pkgs.zsh;
+```
+(Note: Uncommenting means removing the `#` that is befor the line!)
+
+
+- For adding fonts go to [line 64](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L64) and add your preferred fonts there. I've added some fonts that are usually used in some config files you can delete them if you want to but you probably need them later! 
+You can find other fonts by searching the name of your font at search.nixos.org/packages .
+
+
+- Also don't forget to change your user name at [line 92](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L92)! You can just do that by replacing `<your user name>` with the user name that you want.
+
+
+- I've included some essential programs you might need! At [line 103](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L103) you can remove them or add some other programs to them. To search the program you might want go to search.nixos.org/packages and search them there!
+
+
+- Depending to the time that you are reading this you might need to change the system state version, To do it go to [line 181](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L181) and change the number to the version of the iso that you have.
+
+
+- Save and exit when you are done editing your configuration.nix file.
+
+
+***If you need other modules consider checking out nixos.org/manual/nixos/stable !***
+
+
+Installing NixOS
+----------------
