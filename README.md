@@ -1,15 +1,14 @@
 # SNI
 ![SNI](https://user-images.githubusercontent.com/105547581/180649454-81f27742-a4cb-4320-8757-d7969c27de3a.png)
 
-**Simple NixOS Installation! *(With ZFS!)***
---------------------------------------------
-                                       
-
+<h1 align="center">Simple NixOS Installation! (With ZFS!)</h1>
+<p>
+</p>
 
 ***Follow the guid completely and carefully for optimal results.***
 
-**Partitioning and ZFS**
-------------------------
+Partitioning and ZFS
+--------------------
 To format your drive as ZFS first run `lsblk` and remember the name of the drive that you want to format as ZFS!
 
 In my case It's: /dev/sda 
