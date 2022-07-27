@@ -1,4 +1,5 @@
-# SNI
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+
 ![SNI](https://user-images.githubusercontent.com/105547581/180649454-81f27742-a4cb-4320-8757-d7969c27de3a.png)
 
 <h1 align="center">Simple NixOS Installation! (With ZFS!)</h1>
