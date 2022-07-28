@@ -126,29 +126,29 @@ sudo vim /mnt/etc/nixos/configuration.nix
   
   
 - At [line 53](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L53) you can choose which Desktop Environment or Window Manager you want. By default I have set i3 and icewm but you can remove them or add other Desktop Environments or Window Managers!
-To add a Desktop Environment or Window Manager go to search.nixos.org/options and search your preferred Desktop Environment or Window Manager then copy and paste the one with .enable at the end. After pasting add ` = true;` at the end.
+To add a Desktop Environment or Window Manager go to [search.nixos.org/options](search.nixos.org/options) and search your preferred Desktop Environment or Window Manager then copy and paste the one with .enable at the end. After pasting add ` = true;` at the end.
 An example for the KDE Desktop Environment:
 ```
 services.xserver.desktopManager.plasma5.enable = true;
 ```
   
 
-- To enable other shells go to [line 59](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L59) and uncomment the shell you would like, Then to set the default shell uncomment [line 91](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L91) and replace <your preferred shell> with the name of the shell that you uncommented at line 59.
+- To enable other shells go to [line 59](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L59) and uncomment the shell you would like, Then to set the default shell uncomment [line 91](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L91) and replace `<your preferred shell>` with the name of the shell that you uncommented at line 59.
 Here is an example:
 ```
 users.defaultUserShell = pkgs.zsh;
 ```
-(Note: Uncommenting means removing the `#` that is befor the line!)
+(Note: Uncommenting means removing the `#` that is before the line!)
 
 
 - For adding fonts go to [line 64](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L64) and add your preferred fonts there. I've added some fonts that are usually used in some config files you can delete them if you want to but you probably need them later! 
-You can find other fonts by searching the name of your font at search.nixos.org/packages .
+You can find other fonts by searching the name of your font at [search.nixos.org/packages](search.nixos.org/packages).
 
 
 - Also don't forget to change your user name at [line 92](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L92)! You can just do that by replacing `<your user name>` with the user name that you want.
 
 
-- I've included some essential programs you might need! At [line 103](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L103) you can remove them or add some other programs to them. To search the program you might want go to search.nixos.org/packages and search them there!
+- I've included some essential programs you might need! At [line 103](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L103) you can remove them or add some other programs to them. To search the program you might want go to [search.nixos.org/packages](search.nixos.org/packages) and search them there!
 
 
 - Depending to the time that you are reading this you might need to change the system state version, To do it go to [line 181](https://github.com/Cute-Ducky/SNI/blob/main/configuration.nix#L181) and change the number to the version of the iso that you have.
@@ -157,8 +157,44 @@ You can find other fonts by searching the name of your font at search.nixos.org/
 - Save and exit when you are done editing your configuration.nix file.
 
 
-***If you need other modules consider checking out nixos.org/manual/nixos/stable !***
+***If you need other modules consider checking out [nixos.org/manual/nixos/stable](nixos.org/manual/nixos/stable)!***
 
 
 Installing NixOS
 ----------------
+- After you are done configuring your configuration file run:
+
+```
+sudo nixos-install
+```
+
+- After downloading the apps/DE/WM/... that you chose its going to ask you for the root password. Set a strong and complicated password! 
+(Note: The password that you are typing wont show up in the terminal don't worry!)
+
+- Now reboot!
+
+Post installation
+-----------------
+- While booting you shoud enter your ZFS encryption password!
+
+- After booting go to a tty by pressing `ctrl+alt+f1` (Sometimes `fn` too!) and login as root, Then run:
+
+```
+passwd <your user name>
+```
+
+And type in the password that you want for your normal user.
+
+Run: `exit` and go to tty 7 by pressing `ctrl+alt+f7` (Sometimes `fn` too!) and login with the password that you just set!
+
+- After you loged in go to a terminal and run:
+
+```
+sudo nmtui
+```
+
+to connect to a wireless network!
+
+Done!
+-----
+- If this heleped you please consider giving it a star.Thanks!
