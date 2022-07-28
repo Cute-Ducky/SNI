@@ -197,4 +197,4 @@ to connect to a wireless network!
 
 Done!
 -----
-- If this heleped you please consider giving it a star.Thanks!
+- If this heleped you please consider giving it a ⭐️. Thanks!
