@@ -56,7 +56,7 @@ fatlabel /dev/<your drive name> NIXBOOT
 
 Create a zpool and encrypt the drive
 ```
-sudo zpool create -f \
+zpool create -f \
 -o altroot="/mnt" \
 -o ashift=12 \
 -o autotrim=on \
@@ -80,24 +80,24 @@ enter your prefered password and DON'T forget it!
   
 Create ZFS partitions with these commands
 ```
-sudo zfs create -o mountpoint=legacy NIXROOT/root
-sudo zfs create -o mountpoint=legacy NIXROOT/home
-sudo zfs create -o refreservation=1G -o mountpoint=none NIXROOT/reserved
+zfs create -o mountpoint=legacy NIXROOT/root
+zfs create -o mountpoint=legacy NIXROOT/home
+zfs create -o refreservation=1G -o mountpoint=none NIXROOT/reserved
 ```
   
 Mounting the partitions
 ```
-sudo mount -t zfs NIXROOT/root /mnt
-sudo mkdir /mnt/boot
-sudo mkdir /mnt/home
-sudo mount /dev/<your drive name> /mnt/boot
-sudo mount -t zfs NIXROOT/home /mnt/home
+mount -t zfs NIXROOT/root /mnt
+mkdir /mnt/boot
+mkdir /mnt/home
+mount /dev/<your drive name> /mnt/boot
+mount -t zfs NIXROOT/home /mnt/home
 ```
   
 Generating the configuration
 ----------------------------
 ```
-sudo nixos-generate-config --root /mnt
+nixos-generate-config --root /mnt
 ```
 Thanks to [@mcdonc](https://github.com/mcdonc) for the ZFS part!
 
@@ -107,9 +107,9 @@ Editing the config file
 
 open the /mnt/etc/nixos/configuration.nix file with your preferred editor.
 ```
-sudo nano /mnt/etc/nixos/configuration.nix
+nano /mnt/etc/nixos/configuration.nix
 or
-sudo vim /mnt/etc/nixos/configuration.nix
+vim /mnt/etc/nixos/configuration.nix
 ```
 
 
@@ -165,7 +165,7 @@ Installing NixOS
 - After you are done configuring your configuration file run:
 
 ```
-sudo nixos-install
+nixos-install
 ```
 
 - After downloading the apps/DE/WM/... that you chose its going to ask you for the root password. Set a strong and complicated password! 
