@@ -47,11 +47,11 @@ Write and Quit
 
 Now lets make a fat32 file system for the NIXBOOT partition
 ```
-mkfs.vfat -F 32 /dev/<your drive name>
+sudo mkfs.vfat -F 32 /dev/<your drive name>
 ```
 Now lets name the NIXBOOT partition
 ```
-fatlabel /dev/<your drive name> NIXBOOT
+sudo fatlabel /dev/<your drive name> NIXBOOT
 ```
 
 Create a zpool and encrypt the drive
